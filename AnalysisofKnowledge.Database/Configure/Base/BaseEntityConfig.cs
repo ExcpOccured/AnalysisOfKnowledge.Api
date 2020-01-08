@@ -15,7 +15,7 @@ namespace AnalysisofKnowledge.Database.Configure.Base
     public class BaseEntityConfig<TEntity> : IEntityTypeConfiguration<TEntity>
         where TEntity : class
     {
-        public void Configure(EntityTypeBuilder<TEntity> builder)
+        public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             if (typeof(TEntity).GetInterfaces().Contains(typeof(IEntity)))
             {

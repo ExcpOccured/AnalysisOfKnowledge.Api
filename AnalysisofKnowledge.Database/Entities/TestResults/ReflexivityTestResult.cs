@@ -2,18 +2,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using AnalysisofKnowledge.Database.Attributes;
 using AnalysisofKnowledge.Database.Entities.Enum;
 using AnalysisofKnowledge.Database.Entities.TestResults.Base;
-using AnalysisofKnowledge.Database.Entities.TestResults.Points;
 
 namespace AnalysisofKnowledge.Database.Entities.TestResults
 {
-    [TestType(TestType.Activity)]
-    public class ActivityTestResult : BaseTestResult
+    [TestType(TestType.Reflexivity)]
+    public class ReflexivityTestResult : BaseTestResult
     {
         public int Coefficient { get; set; }
 
-        public ActivityTestPoints Points { get; set; }
-        
-        public OctantType ActivityTestsResult { get; set; }
+        public DirectivityType ReflexivitiesTestResult { get; set; }
 
         [NotMapped]
         public override int Score

@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure
 {
-    public class ActivityTestResultConfigure : BaseTestResultConfig<ActivityTestResult>
+    public class LanguagesTestResultConfigure : BaseTestResultConfig<LanguagesTestResult>
     {
-        public override void Configure(EntityTypeBuilder<ActivityTestResult> builder)
+        public override void Configure(EntityTypeBuilder<LanguagesTestResult> builder)
         {
             base.Configure(builder);
 
-            builder.Property(_ => _.ActivityTestsResult).IsRequired();
+            builder.Property(_ => _.LanguageTestResult).IsRequired();
         }
     }
 }
