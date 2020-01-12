@@ -14,7 +14,7 @@ namespace AnalysisofKnowledge.Database.Configure.Base
         where TTestResult : class
     {
         // TODO: Localize 
-        private const string ExceptionMessage = "";
+        private const string ExceptionMessage = "The entity must implement the IBaseTestResult interface";
         public override void Configure(EntityTypeBuilder<TTestResult> builder)
         {
             base.Configure(builder);

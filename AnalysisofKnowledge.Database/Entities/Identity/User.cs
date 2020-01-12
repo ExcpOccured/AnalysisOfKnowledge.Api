@@ -1,14 +1,11 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
-using AnalysisofKnowledge.Database.Entities.Interfaces;
 using DelegateDecompiler;
 using Microsoft.AspNetCore.Identity;
 
 namespace AnalysisofKnowledge.Database.Entities.Identity
 {
-    public class User : IdentityUser<long>, IUser
+    public class User : IdentityUser<long>
     {
         public string FirstName { get; set; }
 
@@ -16,10 +13,6 @@ namespace AnalysisofKnowledge.Database.Entities.Identity
 
         public string Patronymic { get; set; }
         
-        public DateTimeOffset LastUpdateTime { get; set; }
-
-        public virtual ICollection<UserRole> UserRoles { get; set; }
-
         [NotMapped]
         [Computed]
         public string FullName =>
