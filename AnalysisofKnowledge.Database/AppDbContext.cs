@@ -1,5 +1,5 @@
-using System.Reflection;
 using AnalysisofKnowledge.Database.Entities.Identity;
+using AnalysisofKnowledge.Database.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +16,7 @@ namespace AnalysisofKnowledge.Database
         {
             base.OnModelCreating(builder);
 
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            builder.ApplyAllConfigurationsFromCurrentAssembly();
         }
     }
 }
