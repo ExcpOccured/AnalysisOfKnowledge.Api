@@ -23,6 +23,7 @@ namespace AnalysisofKnowledge.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<AppDbContext>(options => 
+                //TODO: Probably need to add global string constant for this value 
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
