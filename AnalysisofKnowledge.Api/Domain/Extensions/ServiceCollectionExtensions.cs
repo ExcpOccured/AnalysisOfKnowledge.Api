@@ -1,3 +1,4 @@
+using AnalysisofKnowledge.Api.Domain.Constants;
 using AnalysisofKnowledge.Api.Models.ServicesContractTypes;
 using AnalysisofKnowledge.Database;
 using AnalysisofKnowledge.Database.NpgSqlApplicationDbContext;
@@ -17,9 +18,8 @@ namespace AnalysisofKnowledge.Api.Domain.Extensions
 
         public static void RegisterDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AppDbContext>(options => 
-                //TODO: Probably need to add global string constant for this value 
-                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseNpgsql(configuration.GetConnectionString(ConnectionString.SelectorName)));
 
             services.AddScoped<IApplicationDbContext, AppDbContext>();
         }
@@ -32,7 +32,7 @@ namespace AnalysisofKnowledge.Api.Domain.Extensions
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
         }
-        
+
         // Register all singleton services via base ISingletonService interface
         private static void RegisterAllSingletonServices(this IServiceCollection services)
         {
