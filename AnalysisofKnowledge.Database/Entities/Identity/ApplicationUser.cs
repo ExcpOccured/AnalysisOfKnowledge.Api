@@ -4,7 +4,7 @@ using AnalysisofKnowledge.Database.Entities.Interfaces;
 
 namespace AnalysisofKnowledge.Database.Entities.Identity
 {
-    public class ApplicationUser : User, IApplicationUser
+    public abstract class ApplicationUser : User, IIdentityEntity
     {
         public virtual ICollection<UserRole> UserRoles { get; set; }
         

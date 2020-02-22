@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class UserLoginConfig : BaseEntityConfig<UserLogin>, IEntityConfig
+    public class UserLoginConfig : BaseEntityConfig<UserLogin, long>, IEntityConfig
     {
         public override void Configure(EntityTypeBuilder<UserLogin> builder)
         {

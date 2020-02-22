@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure
 {
-    public class FacultyConfig : BaseEntityConfig<Faculty>
+    public class FacultyConfig : BaseEntityConfig<Faculty, long>
     {
         public override void Configure(EntityTypeBuilder<Faculty> builder)
         {

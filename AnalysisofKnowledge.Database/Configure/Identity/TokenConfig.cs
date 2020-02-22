@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class TokenConfig : BaseEntityConfig<Token>, IEntityConfig
+    public class TokenConfig : BaseEntityConfig<Token, long>, IEntityConfig
     {
         public override void Configure(EntityTypeBuilder<Token> builder)
         {

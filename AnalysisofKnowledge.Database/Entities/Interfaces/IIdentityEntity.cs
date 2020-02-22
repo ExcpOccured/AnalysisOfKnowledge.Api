@@ -3,7 +3,7 @@ using AnalysisofKnowledge.Database.Entities.Identity;
 
 namespace AnalysisofKnowledge.Database.Entities.Interfaces
 {
-    public interface IApplicationUser : IEntity
+    public interface IIdentityEntity : IEntity
     {
         ICollection<UserRole> UserRoles { get; set; }
 

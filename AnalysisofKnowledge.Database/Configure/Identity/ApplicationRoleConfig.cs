@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class ApplicationRoleConfig : BaseEntityConfig<ApplicationRole>, IEntityConfig
+    public class ApplicationRoleConfig : BaseEntityConfig<ApplicationRole, long>, IEntityConfig
     {
         public override void Configure(EntityTypeBuilder<ApplicationRole> builder)
         {

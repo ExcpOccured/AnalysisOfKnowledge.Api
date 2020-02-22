@@ -4,5 +4,5 @@ using AnalysisofKnowledge.Database.Entities.Identity;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class UserClaimConfig : BaseEntityConfig<UserClaim>, IEntityConfig { }
+    public class UserClaimConfig : BaseEntityConfig<UserClaim, int>, IEntityConfig { }
 }

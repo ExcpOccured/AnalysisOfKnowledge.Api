@@ -57,9 +57,9 @@ namespace AnalysisofKnowledge.Database.Extensions
         /// <param name="modelBuilder">Fluent API model builder</param>
         public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseEntityConfig<>));
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseEntityConfig<,>));
 
-            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseIdentityEntityConfig<>));
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseIdentityEntityConfig<,>));
 
             modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseTestResultConfig<>));
         }

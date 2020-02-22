@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class TeacherConfig : BaseIdentityEntityConfig<Teacher>, IEntityConfig
+    public class TeacherConfig : BaseIdentityEntityConfig<Teacher, long>, IEntityConfig
     {
         public override void Configure(EntityTypeBuilder<Teacher> builder)
         {
