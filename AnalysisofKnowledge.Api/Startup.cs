@@ -1,7 +1,6 @@
-using AnalysisofKnowledge.Database;
+using AnalysisofKnowledge.Api.Domain.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,21 +9,19 @@ namespace AnalysisofKnowledge.Api
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
         public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
-            Configuration = configuration;
-            WebHostEnvironment = webHostEnvironment;
+            _configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
         }
-
-        public IConfiguration Configuration { get; }
-
-        public IWebHostEnvironment WebHostEnvironment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDbContext>(options => 
-                //TODO: Probably need to add global string constant for this value 
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            RegisterDependencies(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -35,6 +32,14 @@ namespace AnalysisofKnowledge.Api
             }
 
             app.UseRouting();
+        }
+
+
+        private void RegisterDependencies(IServiceCollection services)
+        {
+            services.RegisterServices();
+            
+            services.RegisterDatabase(_configuration);
         }
     }
 }
