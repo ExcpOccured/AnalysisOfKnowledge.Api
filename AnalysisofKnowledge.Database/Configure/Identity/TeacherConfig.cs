@@ -1,10 +1,11 @@
 using AnalysisofKnowledge.Database.Configure.Base;
+using AnalysisofKnowledge.Database.Configure.Base.Interfaces;
 using AnalysisofKnowledge.Database.Entities.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Identity
 {
-    public class TeacherConfig : BaseIdentityEntityConfig<Teacher>
+    public class TeacherConfig : BaseIdentityEntityConfig<Teacher>, IEntityConfig
     {
         public override void Configure(EntityTypeBuilder<Teacher> builder)
         {

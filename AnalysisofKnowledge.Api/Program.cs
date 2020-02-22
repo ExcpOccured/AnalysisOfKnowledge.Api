@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 namespace AnalysisofKnowledge.Api
@@ -12,6 +13,11 @@ namespace AnalysisofKnowledge.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+                .ConfigureAppConfiguration((hostingContext, builder) =>
+                {
+                    builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                        .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}", optional: true,
+                            reloadOnChange: true);
+                }).ConfigureWebHostDefaults(builder => builder.UseStartup<Startup>());
     }
 }
