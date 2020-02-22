@@ -9,14 +9,14 @@ namespace AnalysisofKnowledge.Api
 {
     public class Startup
     {
-        private readonly IConfiguration _configuration;
+        public IConfiguration Configuration { get; }
 
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        public IWebHostEnvironment WebHostEnvironment { get; }
 
         public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
-            _configuration = configuration;
-            _webHostEnvironment = webHostEnvironment;
+            Configuration = configuration;
+            WebHostEnvironment = webHostEnvironment;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -24,22 +24,22 @@ namespace AnalysisofKnowledge.Api
             RegisterDependencies(services);
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
+            if (WebHostEnvironment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
         }
-
 
         private void RegisterDependencies(IServiceCollection services)
         {
             services.RegisterServices();
-            
-            services.RegisterDatabase(_configuration);
+
+            services.RegisterDatabase(Configuration);
         }
     }
 }

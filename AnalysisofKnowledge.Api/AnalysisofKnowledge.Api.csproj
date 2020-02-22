@@ -24,4 +24,20 @@
       <ProjectReference Include="..\AnalysisofKnowledge.Database\AnalysisofKnowledge.Database.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="AnalysisofKnowledge.Database\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="AnalysisofKnowledge.Database\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="AnalysisofKnowledge.Database\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="AnalysisofKnowledge.Database\**" />
+    </ItemGroup>
+
 </Project>

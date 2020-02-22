@@ -1,7 +1,10 @@
+using System;
+
 namespace AnalysisofKnowledge.Database.Entities.Interfaces.Base
 {
-    public interface IEntity<TKey> where TKey : struct
+    public interface IEntity<out TKey> 
+        where TKey : struct, IEquatable<TKey>
     {
-        TKey Id { get; set; }
+        TKey Id { get; }
     }
 }
