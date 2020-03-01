@@ -9,11 +9,11 @@ namespace AnalysisofKnowledge.Database.Configure.Identity
     {
         public override void Configure(EntityTypeBuilder<Token> builder)
         {
-            builder.HasOne(_ => _.User)
+            builder.HasOne(applicationUser => applicationUser.User)
                 .WithOne()
-                .HasForeignKey<Token>(_ => _.UserId);
+                .HasForeignKey<Token>(token => token.UserId);
 
-            builder.HasIndex(_ => _.UserId)
+            builder.HasIndex(token => token.UserId)
                 .IsUnique(false);
             
             base.Configure(builder);

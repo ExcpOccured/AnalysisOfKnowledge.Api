@@ -13,7 +13,6 @@ namespace AnalysisofKnowledge.Database.Entities.Identity
         public DateTimeOffset CreatedAt { get; set; }
 
         public DateTimeOffset ExpiryAt { get; set; }
-
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

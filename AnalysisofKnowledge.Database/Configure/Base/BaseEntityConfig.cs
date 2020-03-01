@@ -28,7 +28,7 @@ namespace AnalysisofKnowledge.Database.Configure.Base
                 throw new InvalidEntityTypeConfigureException();
             }
 
-            builder.Property(_ => ((IEntity<TKey>) _).Id).ValueGeneratedOnAdd();
+            builder.Property(property => ((IEntity<TKey>) property).Id).ValueGeneratedOnAdd();
 
             // Warranty for SQL data provider and Ef core
             builder.ToTable($"{typeof(TEntity).Name}s");

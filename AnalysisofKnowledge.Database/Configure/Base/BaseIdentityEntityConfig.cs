@@ -12,9 +12,9 @@ namespace AnalysisofKnowledge.Database.Configure.Base
         {
             base.Configure(builder);
 
-            builder.HasMany(_ => _.UserRoles)
-                .WithOne(_ => (TIdentityEntity) (object) _.User)
-                .HasForeignKey(_ => _.UserId);
+            builder.HasMany(identityEntity => identityEntity.UserRoles)
+                .WithOne(userRole => (TIdentityEntity) (object) userRole.User)
+                .HasForeignKey(userRole => userRole.UserId);
         }
     }
 }

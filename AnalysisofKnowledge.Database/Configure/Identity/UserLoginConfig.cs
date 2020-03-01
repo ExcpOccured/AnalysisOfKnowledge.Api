@@ -11,10 +11,10 @@ namespace AnalysisofKnowledge.Database.Configure.Identity
         {
             base.Configure(builder);
 
-            builder.HasKey(_ => new
+            builder.HasKey(key => new
             {
-                _.ProviderKey,
-                _.LoginProvider
+                key.ProviderKey,
+                key.LoginProvider
             });
         }
     }

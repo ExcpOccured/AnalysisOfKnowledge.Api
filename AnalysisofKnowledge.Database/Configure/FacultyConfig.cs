@@ -10,13 +10,9 @@ namespace AnalysisofKnowledge.Database.Configure
         {
             base.Configure(builder);
 
-            builder.HasOne(_ => _.Student)
-                .WithOne(_ => _.Faculty)
-                .HasForeignKey<Faculty>(_ => _.StudentId);
-            
-            builder.HasOne(_ => _.Teacher)
-                .WithOne(_ => _.Faculty)
-                .HasForeignKey<Faculty>(_ => _.TeacherId);
+            builder.HasOne(applicationUser => applicationUser.ApplicationUser)
+                .WithOne(applicationUser => applicationUser.Faculty)
+                .HasForeignKey<Faculty>(faculty => faculty.StudentId);
         }
     }
 }

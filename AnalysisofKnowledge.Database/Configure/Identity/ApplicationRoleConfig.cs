@@ -11,9 +11,9 @@ namespace AnalysisofKnowledge.Database.Configure.Identity
         {
             base.Configure(builder);
 
-            builder.HasMany(_ => _.UserRoles)
-                .WithOne(_ => _.Role)
-                .HasForeignKey(_ => _.RoleId);
+            builder.HasMany(applicationRole => applicationRole.UserRoles)
+                .WithOne(userRole => userRole.Role)
+                .HasForeignKey(userRole => userRole.RoleId);
         }
     }
 }
