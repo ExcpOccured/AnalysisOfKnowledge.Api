@@ -14,6 +14,7 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
         public override int Score
         {
             get => Coefficient;
+            set => Coefficient = value;
         }
     }
 }

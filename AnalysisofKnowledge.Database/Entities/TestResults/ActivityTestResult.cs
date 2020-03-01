@@ -9,7 +9,7 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Activity)]
     public class ActivityTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
+        private int Coefficient { get; set; }
 
         public ActivityTestPoints Points { get; set; }
         
@@ -19,6 +19,7 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
         public override int Score
         {
             get => Coefficient;
+            set => Coefficient = value;
         }
     }
 }

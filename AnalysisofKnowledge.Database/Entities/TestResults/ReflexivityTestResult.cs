@@ -8,14 +8,15 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Reflexivity)]
     public class ReflexivityTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
+        private int Coefficient { get; set; }
 
-        public DirectivityType ReflexivitiesTestResult { get; set; }
+        public DirectivityType ReflexivityTestResults { get; set; }
 
         [NotMapped]
         public override int Score
         {
             get => Coefficient;
+            set => Coefficient = value;
         }
     }
 }
