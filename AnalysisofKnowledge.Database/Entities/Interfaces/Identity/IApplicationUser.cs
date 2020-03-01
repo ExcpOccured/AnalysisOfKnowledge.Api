@@ -5,6 +5,6 @@ namespace AnalysisofKnowledge.Database.Entities.Interfaces.Identity
 {
     public interface IApplicationUser : IUser, IEntity
     {
-        virtual ICollection<UserRole> UserRoles { get; }
+        ICollection<UserRole> UserRoles { get; }
     }
 }

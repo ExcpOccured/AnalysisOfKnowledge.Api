@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
-using AnalysisofKnowledge.Database.Entities.Interfaces;
 using AnalysisofKnowledge.Database.Entities.Interfaces.Identity;
 using DelegateDecompiler;
 using Microsoft.AspNetCore.Identity;
@@ -14,7 +13,6 @@ namespace AnalysisofKnowledge.Database.Entities.Identity
         public string Education { get; set; }
 
         public ushort? GroupId { get; set; }
-
         public long FacultyId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

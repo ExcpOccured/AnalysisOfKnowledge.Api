@@ -5,7 +5,7 @@ namespace AnalysisofKnowledge.Database.Entities.Interfaces.Identity
 {
     public interface IIdentityEntity : IEntity
     {
-        virtual ICollection<UserRole> UserRoles { get; set; }
+        ICollection<UserRole> UserRoles { get; }
 
         string FullName { get; }
     }
