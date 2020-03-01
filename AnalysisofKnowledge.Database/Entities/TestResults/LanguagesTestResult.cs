@@ -8,8 +8,8 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Languages)]
     public class LanguagesTestResult : BaseTestResult
     {
-        private int Coefficient { get; set; }
         public LanguageLevel LanguageTestResult { get; set; }
+        private int Coefficient { get; set; }
 
         [NotMapped]
         public override int Score

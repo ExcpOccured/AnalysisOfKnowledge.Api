@@ -8,7 +8,7 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Socialization)]
     public class SocializationTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
+        private int Coefficient { get; set; }
 
         [NotMapped]
         public override int Score
