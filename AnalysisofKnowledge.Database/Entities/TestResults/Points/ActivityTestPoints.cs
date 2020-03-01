@@ -1,8 +1,8 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace AnalysisofKnowledge.Database.Entities.TestResults.Points
 {
-    [ComplexType]
+    [Owned]
     public class ActivityTestPoints
     {
         public int PointsInPowerfulLeading { get; set; }

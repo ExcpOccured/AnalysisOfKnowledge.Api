@@ -1,10 +1,7 @@
-using AnalysisofKnowledge.Database.Entities.Interfaces;
+using AnalysisofKnowledge.Database.Entities.Interfaces.Base;
 using Microsoft.AspNetCore.Identity;
 
 namespace AnalysisofKnowledge.Database.Entities.Identity
 {
-    public class UserClaim : IdentityUserClaim<long>, IEntity 
-    {
-        public new long Id { get; set; }
-    }
+    public class UserClaim : IdentityUserClaim<long>, IEntity<int> { }
 }

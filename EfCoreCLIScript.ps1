@@ -1,0 +1,1 @@
+dotnet ef $EfCommand -v --project .\AnalysisofKnowledge.Database\AnalysisofKnowledge.Database.csproj --startup-project .\AnalysisofKnowledge.Api\AnalysisofKnowledge.Api.csproj --configuration Dev

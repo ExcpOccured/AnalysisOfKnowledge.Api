@@ -9,11 +9,9 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Activity)]
     public class ActivityTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
-
         public ActivityTestPoints Points { get; set; }
-        
         public OctantType ActivityTestsResult { get; set; }
+        private int Coefficient { get; set; }
 
         [NotMapped]
         public override int Score

@@ -8,7 +8,7 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Selfgovernment)]
     public class SelfgovermentTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
+        private int Coefficient { get; set; }
 
         [NotMapped]
         public override int Score

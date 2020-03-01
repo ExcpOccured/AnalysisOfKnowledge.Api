@@ -11,7 +11,9 @@ namespace AnalysisofKnowledge.Database.Configure
         {
             base.Configure(builder);
 
-            builder.Property(_ => _.ActivityTestsResult).IsRequired();
+            builder.Property(testResult => testResult.ActivityTestsResult).IsRequired();
+
+            builder.OwnsOne(testResult => testResult.Points);
         }
     }
 }

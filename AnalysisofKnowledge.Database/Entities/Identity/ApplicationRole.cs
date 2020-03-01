@@ -8,7 +8,6 @@ namespace AnalysisofKnowledge.Database.Entities.Identity
     public class ApplicationRole : IdentityRole<long>, IEntity
     {
         public Role Role { get; set; }
-
         public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

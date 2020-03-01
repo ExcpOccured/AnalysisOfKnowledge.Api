@@ -17,7 +17,8 @@ namespace AnalysisofKnowledge.Api
                 {
                     builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}", optional: true,
-                            reloadOnChange: true);
+                            reloadOnChange: true)
+                        .AddEnvironmentVariables();
                 }).ConfigureWebHostDefaults(builder => builder.UseStartup<Startup>());
     }
 }

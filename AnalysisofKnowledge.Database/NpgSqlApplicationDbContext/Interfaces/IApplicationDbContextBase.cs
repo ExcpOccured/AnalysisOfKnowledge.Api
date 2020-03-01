@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore.Internal;
 
 namespace AnalysisofKnowledge.Database.NpgSqlApplicationDbContext.Interfaces
 {
+    /// <summary>
+    /// Base interface for moq DbContext
+    /// </summary>
     public interface IApplicationDbContextBase : IAsyncDisposable, IDisposable, IDbContextDependencies,
         IDbSetCache,
         IDbContextPoolable

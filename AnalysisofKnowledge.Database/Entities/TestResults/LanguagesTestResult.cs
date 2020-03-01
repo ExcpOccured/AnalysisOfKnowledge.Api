@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using AnalysisofKnowledge.Database.Attributes;
 using AnalysisofKnowledge.Database.Entities.Enum;
@@ -9,9 +8,8 @@ namespace AnalysisofKnowledge.Database.Entities.TestResults
     [TestType(TestType.Languages)]
     public class LanguagesTestResult : BaseTestResult
     {
-        public int Coefficient { get; set; }
-
         public LanguageLevel LanguageTestResult { get; set; }
+        private int Coefficient { get; set; }
 
         [NotMapped]
         public override int Score

@@ -1,5 +1,5 @@
 using AnalysisofKnowledge.Database.Entities.Interfaces;
-using AnalysisofKnowledge.Database.Exceptions;
+using AnalysisofKnowledge.Database.Entities.Interfaces.TestResults;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Base
@@ -10,23 +10,14 @@ namespace AnalysisofKnowledge.Database.Configure.Base
     /// <typeparam name="TTestResult">
     /// Entity that implements the IBaseTestResult interface
     /// </typeparam>
-    public class BaseTestResultConfig<TTestResult> : BaseEntityConfig<TTestResult>
-        where TTestResult : class
+    public class BaseTestResultConfig<TTestResult> : BaseEntityConfig<TTestResult, long>
+        where TTestResult : class, IBaseTestResult
     {
-        // TODO: Localize 
-        private const string ExceptionMessage = "The entity must implement the IBaseTestResult interface";
         public override void Configure(EntityTypeBuilder<TTestResult> builder)
         {
             base.Configure(builder);
 
-            if (typeof(TTestResult).IsAssignableFrom(typeof(IBaseTestResult)))
-            {
-                builder.Property(_ => ((IBaseTestResult) _).Score).IsRequired();
-            }
-            else
-            {
-                throw new InvalidEntityTypeConfigureException(ExceptionMessage);
-            }
+            builder.Property(testResult => testResult.Score).IsRequired();
         }
     }
 }

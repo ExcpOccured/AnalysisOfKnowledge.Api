@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace AnalysisofKnowledge.Database.NpgSqlApplicationDbContext
 {
+    /// <summary>
+    /// Required for moq the ApplicationDbContext 
+    /// </summary>
     public interface IApplicationDbContext : IApplicationDbContextBase, IHasEntry,
         IInfrastructure<IServiceProvider>
     {
