@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using DelegateDecompiler;
 
-namespace AnalysisofKnowledge.Database.Entities.Interfaces
+namespace AnalysisofKnowledge.Database.Entities.Interfaces.Identity
 {
     public interface IUser
     {

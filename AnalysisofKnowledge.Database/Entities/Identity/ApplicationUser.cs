@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using AnalysisofKnowledge.Database.Entities.Interfaces;
+using AnalysisofKnowledge.Database.Entities.Interfaces.Identity;
 using DelegateDecompiler;
 using Microsoft.AspNetCore.Identity;
 

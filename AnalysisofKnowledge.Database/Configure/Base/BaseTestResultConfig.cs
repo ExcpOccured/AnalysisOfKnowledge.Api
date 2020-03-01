@@ -1,4 +1,5 @@
 using AnalysisofKnowledge.Database.Entities.Interfaces;
+using AnalysisofKnowledge.Database.Entities.Interfaces.TestResults;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AnalysisofKnowledge.Database.Configure.Base

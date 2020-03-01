@@ -1,4 +1,4 @@
-namespace AnalysisofKnowledge.Database.Entities.Interfaces
+namespace AnalysisofKnowledge.Database.Entities.Interfaces.TestResults
 {
     public interface IBaseTestResult
     {

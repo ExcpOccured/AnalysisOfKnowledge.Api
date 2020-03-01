@@ -1,10 +1,11 @@
 using AnalysisofKnowledge.Database.Entities.Base;
 using AnalysisofKnowledge.Database.Entities.Interfaces;
+using AnalysisofKnowledge.Database.Entities.Interfaces.TestResults;
 
 namespace AnalysisofKnowledge.Database.Entities.TestResults.Base
 {
     public abstract class BaseTestResult : Entity, IBaseTestResult
     {
-        public abstract int Score { get; set; }
+        public abstract int Score { get; }
     }
 }
