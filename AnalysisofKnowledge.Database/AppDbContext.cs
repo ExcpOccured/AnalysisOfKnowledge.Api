@@ -1,6 +1,7 @@
 using AnalysisofKnowledge.Database.Entities.Identity;
 using AnalysisofKnowledge.Database.Extensions;
 using AnalysisofKnowledge.Database.NpgSqlApplicationDbContext;
+using AnalysisofKnowledge.Database.NpgSqlApplicationDbContext.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,8 @@ using Npgsql.Logging;
 namespace AnalysisofKnowledge.Database
 {
     public class AppDbContext : IdentityDbContext<ApplicationUser, ApplicationRole,
-        long, UserClaim, UserRole, UserLogin, IdentityRoleClaim<long>, IdentityUserToken<long>>, IApplicationDbContext
+        long, UserClaim, UserRole, UserLogin, IdentityRoleClaim<long>, IdentityUserToken<long>>, 
+        IApplicationDbContext
     {
         public AppDbContext(DbContextOptions dbContextOptions)
             : base(dbContextOptions) { }
