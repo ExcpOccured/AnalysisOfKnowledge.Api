@@ -32,7 +32,7 @@ namespace AnalysisofKnowledge.Api.Domain.DefaultDataGenerators
             {
                 if (identityRoles.All(pair => pair.Value.Role != roleType))
                 {
-                    var nameLower = roleType
+                    var nameLower = roleType;
                 }
             }
         }
