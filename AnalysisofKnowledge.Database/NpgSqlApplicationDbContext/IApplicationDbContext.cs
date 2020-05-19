@@ -9,7 +9,7 @@ namespace AnalysisofKnowledge.Database.NpgSqlApplicationDbContext
     /// Required for moq the ApplicationDbContext 
     /// </summary>
     public interface IApplicationDbContext : IApplicationDbContextBase, IHasEntry,
-        IInfrastructure<IServiceProvider>
+        IInfrastructure<IServiceProvider>, IIdentityApplicationDbContext
     {
         ChangeTracker ChangeTracker { get; }
 

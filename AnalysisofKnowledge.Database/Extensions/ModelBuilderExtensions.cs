@@ -10,11 +10,24 @@ namespace AnalysisofKnowledge.Database.Extensions
     public static class ModelBuilderExtensions
     {
         /// <summary>
+        /// Bulk register for base domain specified entity configs
+        /// </summary>
+        /// <param name="modelBuilder">Fluent API model builder</param>
+        public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseEntityConfig<,>));
+
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseIdentityEntityConfig<,>));
+
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseTestResultConfig<>));
+        }
+
+        /// <summary>
         /// Bulk register(with lot of reflection) IEntityTypeConfiguration 
         /// </summary>
         /// <param name="modelBuilder">Fluent API model builder</param>
         /// <param name="baseConfigurationType">The base type of the entity configuration</param>
-        public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder,
+        private static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder,
             Type baseConfigurationType)
         {
             // ModelBuilder contains multiple ApplyConfiguration methods
@@ -44,24 +57,11 @@ namespace AnalysisofKnowledge.Database.Extensions
                     // make concrete ApplyConfiguration<SomeEntity> method
                     var applyConcreteMethod =
                         applyGenericMethod.MakeGenericMethod(typeInterface.GenericTypeArguments[0]);
-                    // and invoke that with fresh instance of your configuration type
+                    // and invoke that
                     applyConcreteMethod.Invoke(modelBuilder, new[] {Activator.CreateInstance(type)});
                     break;
                 }
             }
-        }
-
-        /// <summary>
-        /// Bulk register for base domain specified entity configs
-        /// </summary>
-        /// <param name="modelBuilder">Fluent API model builder</param>
-        public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseEntityConfig<,>));
-
-            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseIdentityEntityConfig<,>));
-
-            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(BaseTestResultConfig<>));
         }
     }
 }
